@@ -3,9 +3,12 @@
 namespace Xtech;
 
 use Illuminate\Database\Eloquent\Model;
+use Watson\Rememberable\Rememberable;
 
 class Order extends Model
 {
+    use Rememberable;
+
     protected $table = 'orders';
 
     protected $fillable = [ 'total_value' ];

@@ -17,6 +17,8 @@ Route::get('products', 'AppController@products');
 Route::get('product/create', 'AppController@createProduct');
 Route::get('product/{product}/retrieve', 'AppController@retrieveProduct');
 
+Route::get('orders', 'AppController@orders');
+
 Route::post('product/create', 'ProductController@create');
 Route::post('product/{product}/update', 'ProductController@update');
 Route::post('product/{product}/delete', 'ProductController@delete');

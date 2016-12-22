@@ -2,6 +2,7 @@
 
 namespace Xtech\Http\Controllers;
 
+use Xtech\Order;
 use Xtech\Product;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,17 @@ class AppController extends Controller
     public function products(){
         return view('app.product.all')->with([
             'products' => Product::all()
+        ]);
+    }
+
+    public function orders(){
+        $orders = Order::orderBy('created_at','desc')
+                       ->with(['products' => function($q){ $q->remember(30); }])
+                       ->remember(30)
+                       ->get();
+        
+        return view('app.order.all')->with([
+            'orders' => $orders
         ]);
     }
 }
