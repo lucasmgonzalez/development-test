@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function create(CreateRequest $request){
+    public function create(CreateRequest $request)
+    {
         $inputs = $request->except('_token');
 
         $product = Product::create($inputs);
@@ -18,7 +19,8 @@ class ProductController extends Controller
         return $product;
     }
 
-    public function update(UpdateRequest $request, Product $product){
+    public function update(UpdateRequest $request, Product $product)
+    {
         $inputs = $request->except('_token');
 
         $product->update($inputs);
@@ -26,7 +28,8 @@ class ProductController extends Controller
         return $product;
     }
 
-    public function delete(DeleteRequest $request, Product $product){
+    public function delete(DeleteRequest $request, Product $product)
+    {
         $product->delete();
 
         return $product;

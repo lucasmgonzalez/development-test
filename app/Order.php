@@ -13,7 +13,8 @@ class Order extends Model
 
     protected $fillable = [ 'total_value' ];
 
-    public static function generate(){
+    public static function generate()
+    {
         $order = new Order(['total_value' => 0]);
         $order->save();
 
@@ -23,7 +24,7 @@ class Order extends Model
 
         $order_products = $products->shuffle()->take($number_of_different_products);
 
-        foreach($order_products as $product){
+        foreach ($order_products as $product){
 
             $qtd = rand(1,$product->stock_quantity);
 
@@ -41,7 +42,8 @@ class Order extends Model
         return $order;
     }
     
-    public function products(){
+    public function products()
+    {
         return $this->belongsToMany(Product::class, 'orders_products','order_id','product_id')->withPivot(['quantity']);
     }
 }

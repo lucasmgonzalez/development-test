@@ -28,8 +28,21 @@
 
                     <div class="form-group">
                         <input type="submit" value="Salvar" class="btn btn-success pull-right">
+                        <label for="delete-product-submit"
+                               class="btn btn-danger btn-raised"
+                               onclick="return confirm('Você realmente deseja excluir esse produto?')">
+                            Excluir produto
+                        </label>
                         <div class="clearfix"></div>
                     </div>
+                </form>
+                <form action="{{ action('ProductController@delete', ['product' => $product]) }}"
+                      data-redirect="{{ action('AppController@products') }}"
+                      method="POST"
+                      class="hidden"
+                      id="delete-product">
+                    {{ csrf_field() }}
+                    <input type="submit" value="Deletar" id="delete-product-submit">
                 </form>
             </div>
         </div>

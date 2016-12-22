@@ -8,32 +8,37 @@ use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('app.index');
     }
 
-    public function createProduct(){
+    public function createProduct()
+    {
         return view('app.product.create');
     }
 
-    public function retrieveProduct(Product $product){
+    public function retrieveProduct(Product $product)
+    {
         return view('app.product.retrieve')->with([
             'product' => $product
         ]);
     }
 
-    public function products(){
+    public function products()
+    {
         return view('app.product.all')->with([
             'products' => Product::all()
         ]);
     }
 
-    public function orders(){
+    public function orders()
+    {
         $orders = Order::orderBy('created_at','desc')
                        ->with(['products' => function($q){ $q->remember(30); }])
                        ->remember(30)
                        ->get();
-        
+
         return view('app.order.all')->with([
             'orders' => $orders
         ]);
