@@ -18,12 +18,21 @@
 
                     <div class="form-group">
                         <label for="create-product-stock_quantity" class="control-label">Quantidade no estoque</label>
-                        <input type="text" name="stock_quantity" id="create-product-stock_quantity" class="form-control">
+                        <input type="text"
+                               name="stock_quantity"
+                               id="create-product-stock_quantity"
+                               data-mask="0#"
+                               class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="create-product-price" class="control-label">Preço</label>
-                        <input type="text" name="price" id="create-product-price" class="form-control">
+                        <input type="text"
+                               name="price"
+                               id="create-product-price"
+                               data-mask="#0.00"
+                               data-mask-reverse="true"
+                               class="form-control">
                     </div>
                     
                     <div class="form-group">

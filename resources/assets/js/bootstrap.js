@@ -11,6 +11,7 @@ window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 require('bootstrap-material-design');
 require('sweetalert');
+require('jquery-mask-plugin');
 
 
 //-------------Nem estou usando Vue

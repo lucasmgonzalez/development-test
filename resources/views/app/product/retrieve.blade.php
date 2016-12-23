@@ -18,12 +18,23 @@
 
                     <div class="form-group">
                         <label for="update-product-stock_quantity" class="control-label">Quantidade no estoque</label>
-                        <input type="text" name="stock_quantity" id="update-product-stock_quantity" class="form-control" value="{{ $product->stock_quantity }}">
+                        <input type="text"
+                               name="stock_quantity"
+                               id="update-product-stock_quantity"
+                               class="form-control"
+                               data-mask="0#"
+                               value="{{ $product->stock_quantity }}">
                     </div>
 
                     <div class="form-group">
                         <label for="update-product-price" class="control-label">Preço</label>
-                        <input type="text" name="price" id="update-product-price" class="form-control" value="{{ $product->price }}">
+                        <input type="text"
+                               name="price"
+                               id="update-product-price"
+                               class="form-control"
+                               data-mask="#0.00"
+                               data-mask-reverse="true"
+                               value="{{ $product->price }}">
                     </div>
 
                     <div class="form-group">
